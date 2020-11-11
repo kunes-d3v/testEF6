@@ -1,0 +1,10 @@
+﻿// this file contains descrption about the way to MySql with EF6
+
+- add MySql.Data.EntityFramework package (nuget)
+- create the entities (classes):
+	- give each membre the proper attribute (annotation)
+- create the context for your database
+	- give the DB context MySql config source by assigning the annotation [DbConfigurationType(typeof(MySqlEFConfiguration))]
+	- init the constructor with the connection string: public MyDBContext() : base("server=localhost;User Id=root; Persist Security Info=True;database=ProductsDB;password=1234")
+	- in the constructor you can add verification for DB existance (this.Database.Exists())
+- init a new DB context instance to work with ...
